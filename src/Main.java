@@ -80,12 +80,31 @@ public class Main {
 
     public static void task6() {
         System.out.println("Задание 6");
-
+        for (int i = 1; i <= 30; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                System.out.printf("%d: ping pong%n", i);
+            } else if (i % 3 == 0) {
+                System.out.printf("%d: ping%n", i);
+            } else if (i % 5 == 0) {
+                System.out.printf("%d: pong%n", i);
+            } else {
+                System.out.printf("%d:%n", i);
+            }
+        }
     }
 
     public static void task7() {
         System.out.println("Задание 7");
-
+        int number = 10; // до какого числа считаем
+        int a = 0, b = 1;
+        System.out.print(a + " " + b + " ");
+        for (int i = 0; i < number - 2; i++) {
+            int fibonacci = a + b;
+            a = b;
+            b = fibonacci;
+            System.out.print(fibonacci + " ");
+        }
+        System.out.println();
     }
 
     public static void task8() {
