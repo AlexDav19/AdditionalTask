@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         task1();
@@ -8,6 +10,14 @@ public class Main {
         task6();
         task7();
         task8();
+        task9();
+        task10();
+        task11();
+        task12();
+        task13();
+        task14();
+        task15();
+        task16();
     }
 
     public static void task1() {
@@ -109,6 +119,89 @@ public class Main {
 
     public static void task8() {
         System.out.println("Задание 8");
+        int[][] matrix = new int[3][3];
+        int number = 1; // число для замены
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (i % 2 == 0 && j % 2 == 0 || i == 1 && j == 1) {
+                    matrix[i][j] = number;
+                }
+            }
+        }
+        for (int[] row : matrix) {
+            for (int column : row) {
+                System.out.print(column + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void task9() {
+        System.out.println("Задание 9");
+        int[] arr = {5, 4, 3, 2, 1};
+        System.out.println(Arrays.toString(arr));
+        int[] arr2 = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            arr2[i] = arr[arr.length - i - 1];
+        }
+        System.out.println(Arrays.toString(arr2));
+    }
+
+    public static void task10() {
+        System.out.println("Задание 10");
+        int[] arr = {5, 4, 3, 2, 1};
+        System.out.println(Arrays.toString(arr));
+        for (int i = 0; i < arr.length / 2; i++) {
+            int number = arr[i];
+            arr[i] = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = number;
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public static void task11() {
+        System.out.println("Задание 11");
+        int[] arr = {-6, 2, 5, -8, 8, 10, 4, -7, 12, 1};
+        work:
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] + arr[j] == -2) {
+                    System.out.println(arr[i] + " " + arr[j]);
+                    break work;
+                }
+            }
+        }
+    }
+
+    public static void task12() {
+        System.out.println("Задание 12");
+        int[] arr = {-6, 2, 5, -8, 8, 10, 4, -7, 12, 1};
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] + arr[j] == -2) {
+                    System.out.println(arr[i] + " " + arr[j]);
+                }
+            }
+        }
+    }
+
+    public static void task13() {
+        System.out.println("Задание 13");
+
+    }
+
+    public static void task14() {
+        System.out.println("Задание 14");
+
+    }
+
+    public static void task15() {
+        System.out.println("Задание 15");
+
+    }
+
+    public static void task16() {
+        System.out.println("Задание 16");
 
     }
 }
