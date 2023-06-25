@@ -20,6 +20,7 @@ public class Main {
         task16();
     }
 
+    // Переменные
     public static void task1() {
         System.out.println("Задание 1");
         int a = 12, b = 27, c = 44, d = 15, e = 9;
@@ -44,6 +45,7 @@ public class Main {
         System.out.printf("a = %d%nb = %d%n", a, b);
     }
 
+    // Условные операторы
     public static void task4() {
         System.out.println("Задание 4");
         int age = 19;
@@ -88,6 +90,7 @@ public class Main {
         }
     }
 
+    // Циклы
     public static void task6() {
         System.out.println("Задание 6");
         for (int i = 1; i <= 30; i++) {
@@ -117,6 +120,7 @@ public class Main {
         System.out.println();
     }
 
+    // Массивы
     public static void task8() {
         System.out.println("Задание 8");
         int[][] matrix = new int[3][3];
@@ -185,23 +189,56 @@ public class Main {
         }
     }
 
+    // Строки
     public static void task13() {
         System.out.println("Задание 13");
-
+        String fullName = "Ivanov Ivan Ivanovich";
+        String firstName, lastName, middleName;
+        lastName = fullName.substring(0, fullName.indexOf(" "));
+        firstName = fullName.substring(fullName.indexOf(" ") + 1, fullName.lastIndexOf(" "));
+        middleName = fullName.substring(fullName.lastIndexOf(" ") + 1);
+        System.out.println("Имя сотрудника — " + firstName);
+        System.out.println("Фамилия сотрудника — " + lastName);
+        System.out.println("Отчество сотрудника — " + middleName);
     }
 
     public static void task14() {
         System.out.println("Задание 14");
-
+        String fullName = "ivanov ivan ivanovich";
+        char[] result = fullName.toCharArray();
+        result[0] = Character.toUpperCase(result[0]);
+        for (int i = 0; i < result.length; i++) {
+            if (result[i] == ' ') {
+                result[i + 1] = Character.toUpperCase(result[i + 1]);
+            }
+            System.out.print(result[i]);
+        }
+        System.out.println();
     }
 
     public static void task15() {
         System.out.println("Задание 15");
-
+        String a = "135", b = "246";
+        char[] arrA = a.toCharArray();
+        char[] arrB = b.toCharArray();
+        StringBuffer result = new StringBuffer();
+        for (int i = 0; i < arrA.length; i++) {
+            result.append(arrA[i]);
+            result.append(arrB[i]);
+        }
+        System.out.println(result);
     }
 
     public static void task16() {
         System.out.println("Задание 16");
-
+        String word = "aabccddefgghiijjkk";
+        char[] charWord = word.toCharArray();
+        char check = ' '; // переменная для проверки повторений больше чем 2
+        for (int i = 0; i < charWord.length - 1; i++) {
+            if (charWord[i] == charWord[i + 1] && check != charWord[i]) {
+                check = charWord[i];
+                System.out.print(charWord[i]);
+            }
+        }
     }
 }
